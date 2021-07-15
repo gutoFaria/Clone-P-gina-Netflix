@@ -1,0 +1,142 @@
+/*
+resete o css com * refere-se a todo documento
+border:  1px solid black; => é uma "caixa"
+usar variável caso for usar um elemento várias vezes como cores no :root
+*/
+:root{
+    --vermelho:#E50914;
+    --preta:#141414;
+    --URL:url('/img/animes/min.jpg');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* limite dos elementos em uma área (caixa)*/
+}
+/*definição para todo o projeto*/
+body{ 
+    background: var(--preta);
+    font-family: 'Arial', Times, serif;
+    color: white;
+}
+
+/*
+flex tendencia de jogar os elementos para a linha por padrão
+
+*/
+header .container{
+   display: flex; 
+   flex-direction: row;
+   align-items: center;
+   justify-content:space-between ;
+}
+
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black',Times;
+    font-size: 40px;
+}
+
+/*caminho para chegar a tag "a"
+text-decoration retirar a linha
+*/
+header nav a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+/*hover mudança de cor ao passar o mouse por cima*/
+header nav a:hover{
+    color:#FFF;
+}
+
+
+
+/* ESTILOS DO FILME PRINCIPAL*/
+
+/*
+url                 buscar a imagem 
+background-size     especificar o tamanho da imagem
+linear-gradient()   criar camadas de cores
+flex-star           começar sempre da esquerda
+*/
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), var(--URL);
+
+    height: 400px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.titulo{
+    margin-top: 5%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Arial, sans-serif';
+}
+
+/*
+rgba        efeito de tranparência
+padding     espaçamento um valor as 4 direções (cima,baixo,esquerda,direita)
+margin      espaçamento entre os elementos
+transition  cuida da transição do elemento
+*/
+.botao{
+    background-color:rgba(0,0,0,.50) ;
+    border: none;
+    color: white;
+    font-weight: bold;
+
+    padding: 15px 30px;
+    margin: 15px;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.container{
+    margin-left: 20px;
+}
+
+/*alterando container que esta na div filme principal*/
+.filme-principal .container{
+    width: 70%;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrossel-filmes{
+    margin-top: 5px;
+}
+
+.carrossel-filmes img:hover{
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.5);
+} 
